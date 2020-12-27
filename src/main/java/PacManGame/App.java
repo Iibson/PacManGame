@@ -43,7 +43,7 @@ public class App extends Application implements IGameEngineObserver, EventHandle
 
     @Override
     public void changedView(EngineStatus engineStatus) {
-        if(engineStatus == EngineStatus.RUNNING)
+        if(engineStatus != EngineStatus.RUNNING)
             engine = new GameEngine(this);
         this.engineStatus = engineStatus;
         Scene scene = engine.drawScene(engineStatus);
