@@ -89,7 +89,7 @@ public class GameMap {
     }
 
     private void ghostEncounter(IGameObject gameObject) {
-        if (((Ghost) gameObject).isSacred())
+        if (((Ghost) gameObject).isScared())
             eatGhost(((Ghost) gameObject));
         else
             die();
@@ -134,7 +134,7 @@ public class GameMap {
 
     private void moveGameObjects() {
         this.ghosts.forEach(ghost -> {
-            for (int i = 0; i < (((Ghost) ghost).isSacred() ? 1 : this.level); i++)
+            for (int i = 0; i < (((Ghost) ghost).isScared() ? 1 : this.level); i++)
                 ghost.move();
         });
         for (int i = 0; i < 3; i++)

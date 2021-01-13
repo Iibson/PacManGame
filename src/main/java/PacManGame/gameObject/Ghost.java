@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class Ghost extends AbstractMovingGameObject {
 
-    private boolean isSacred;
+    private boolean isScared;
     private int scaredTimer;
     public final static int points = 400;
 
@@ -18,7 +18,7 @@ public class Ghost extends AbstractMovingGameObject {
         super(x, y, size, gameMap);
         this.objectOnMapVisualisation.setFill(Color.RED);
         this.id = GameObjectID.GHOST;
-        this.isSacred = false;
+        this.isScared = false;
     }
 
     public void setDirectionToPlayer() {
@@ -44,7 +44,7 @@ public class Ghost extends AbstractMovingGameObject {
 
     @Override
     public void move() {
-        if(isSacred)
+        if(isScared)
             reduceTimer();
         Position tempPosition = new Position(this.objectOnMapVisualisation.getX(), this.objectOnMapVisualisation.getY());
         super.move();
@@ -63,11 +63,11 @@ public class Ghost extends AbstractMovingGameObject {
             this.objectOnMapVisualisation.setFill(Color.CYAN);
         else
             this.objectOnMapVisualisation.setFill(Color.RED);
-        this.isSacred = isSacred;
+        this.isScared = isSacred;
     }
 
-    public boolean isSacred() {
-        return this.isSacred;
+    public boolean isScared() {
+        return this.isScared;
     }
 
     public void setScaredTimer(int scaredTimer) {
