@@ -50,7 +50,7 @@ public class GameEngine implements IGameMapObserver {
             default:
                 group = new Group();
                 group.getChildren().add(info);
-                info.setText("PORAŻKA \n twoje statystyki" + this.gameMap.getInfoAboutGame() + "\n NACISNIJ DOWOLNY KLAWISZ ABY SPROBOWAC PONOWNIE");
+                info.setText("PORAŻKA \n NACISNIJ DOWOLNY KLAWISZ ABY SPROBOWAC PONOWNIE");
                 break;
         }
         Scene scene =  new Scene(group, 400, 440);
